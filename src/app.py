@@ -17,7 +17,8 @@ conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(
     spreadsheet=url,
-    worksheet="Página1"
+    worksheet="Página1",
+    errors="ignore"
 )
 
 df = df.iloc[2:40]
@@ -140,14 +141,14 @@ merged_data['Male_Count'] = -merged_data['Male_Count']
 fig = go.Figure()
 
 fig.add_trace(go.Bar(
-    y=merged_data['AgeGroup'].astype(str),
+    y=merged_data['AgeGroup'].astype(),
     x=merged_data['Male_Count'],
     name='Male',
     orientation='h',
 ))
 
 fig.add_trace(go.Bar(
-    y=merged_data['AgeGroup'].astype(str),
+    y=merged_data['AgeGroup'].astype(),
     x=merged_data['Female_Count'],
     name='Female',
     orientation='h',
