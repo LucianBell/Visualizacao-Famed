@@ -16,7 +16,7 @@ url = os.getenv('URL')
 conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(
-    spreadsheet=url,
+    worksheet=url,
 )
 
 df = df.iloc[2:40]
