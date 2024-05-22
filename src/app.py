@@ -13,7 +13,7 @@ load_dotenv()
 url = "https://docs.google.com/spreadsheets/d/1Y6R653wcsuvHOwTntZ6tr3EjtHksz5hhmg7YgKaatFo/edit?usp=sharing"
 
 # Create a connection object.
-conn = st.experimental_connection("gsheets", type=GSheetsConnection, errors="ignore")
+conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(
     spreadsheet=url,
