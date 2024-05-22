@@ -13,13 +13,9 @@ load_dotenv()
 url = "https://docs.google.com/spreadsheets/d/1Y6R653wcsuvHOwTntZ6tr3EjtHksz5hhmg7YgKaatFo/edit?usp=sharing"
 
 # Create a connection object.
-conn = st.experimental_connection("gsheets", type=GSheetsConnection)
+conn = st.connection("gsheets", type=GSheetsConnection)
 
-df = conn.read(
-    spreadsheet=url,
-    worksheet="Página1",
-    encoding='utf-8'
-)
+df = conn.read(spreadsheet=url)
 
 df = df.iloc[2:40]
 
@@ -141,14 +137,14 @@ merged_data['Male_Count'] = -merged_data['Male_Count']
 fig = go.Figure()
 
 fig.add_trace(go.Bar(
-    y=merged_data['AgeGroup'].astype(),
+    y=merged_data['AgeGroup'].astype('str'),
     x=merged_data['Male_Count'],
     name='Male',
     orientation='h',
 ))
 
 fig.add_trace(go.Bar(
-    y=merged_data['AgeGroup'].astype(),
+    y=merged_data['AgeGroup'].astype('str'),
     x=merged_data['Female_Count'],
     name='Female',
     orientation='h',
