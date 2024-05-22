@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #url
-url = os.getenv('URL')
+url = "https://docs.google.com/spreadsheets/d/1Y6R653wcsuvHOwTntZ6tr3EjtHksz5hhmg7YgKaatFo/edit?usp=sharing"
 
 # Create a connection object.
 conn = st.experimental_connection("gsheets", type=GSheetsConnection)
