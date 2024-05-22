@@ -17,7 +17,8 @@ conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(
     spreadsheet=url,
-    worksheet="Página1"
+    worksheet="Página1",
+    encoding='utf-8'
 )
 
 df = df.iloc[2:40]
