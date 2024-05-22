@@ -1,1 +1,1 @@
-pip install st-gsheets-connection;
+streamlit-gsheets
