@@ -161,7 +161,7 @@ fig.update_layout(
 
 # Print results.
 # st.dataframe(df)
-logo = Image.open('images\logo.png')
+logo = Image.open('images/logo.png')
 
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
