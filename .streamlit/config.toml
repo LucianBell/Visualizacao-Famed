@@ -1,0 +1,6 @@
+[runner]
+magicEnabled = true
+installTracer = false
+
+[cache]
+persist = "True"  # Ensure persistence is enabled if you want to use disk cache
