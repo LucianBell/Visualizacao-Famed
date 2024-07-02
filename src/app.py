@@ -14,7 +14,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(spreadsheet=st.secrets["url"])
 
-df = df.iloc[2:40]
+df = df.iloc[2:66]
 
 # Plotting collected TCLEs
 fig_tcle = px.pie(data_frame=df['TCLE'], names=df['TCLE'],  title="Quantidade e Estado de TCLEs:")
