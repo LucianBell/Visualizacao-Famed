@@ -14,7 +14,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(spreadsheet="https://docs.google.com/spreadsheets/d/12Z6jcw-Upjkoqf1hdHMLj-d9km5wLPeF75lSIy0hOjg/edit?usp=sharing")
 
-df = df.iloc[3:66]
+df = df.iloc[3:67]
 
 # Plotting collected TCLEs
 fig_tcle = px.pie(data_frame=df['TCLE'], names=df['TCLE'],  title="Quantidade e Estado de TCLEs:")
