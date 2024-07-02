@@ -12,7 +12,7 @@ load_dotenv()
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-df = conn.read(spreadsheet=os.getenv('URL'))
+df = conn.read(spreadsheet="https://docs.google.com/spreadsheets/d/12Z6jcw-Upjkoqf1hdHMLj-d9km5wLPeF75lSIy0hOjg/edit?usp=sharing")
 
 df = df.iloc[2:66]
 
