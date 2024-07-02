@@ -9,13 +9,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-#url
-url = "https://docs.google.com/spreadsheets/d/1Y6R653wcsuvHOwTntZ6tr3EjtHksz5hhmg7YgKaatFo/edit?usp=sharing"
-
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-df = conn.read(spreadsheet=url)
+df = conn.read(spreadsheet=st.secrets["url"])
 
 df = df.iloc[2:40]
 
